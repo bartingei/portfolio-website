@@ -1,4 +1,3 @@
-/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +11,7 @@ body {
 
 }
 
-/* Navigation */
+
 .navContainer {
   display: flex;
   justify-content: space-between;
@@ -26,6 +25,10 @@ body {
   width: 100%;
   z-index: 1000;
   background-color: rgba(255, 255, 255, 0.7);
+}
+.navContainer a{
+  text-decoration: none;
+  color: black;
 }
 .navContainer .nav ul {
   list-style: none;
@@ -659,9 +662,7 @@ span{
   border-radius: 12px;
 
 }
-.EducationCard:hover{
 
-}
 .sectionA{
   padding: 60px;
   flex:1;
@@ -962,4 +963,229 @@ span{
   padding: 6px 12px;
   border-radius: 20px; 
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+body.darkMode {
+  background-color: #0a0a0a;
+  color: #ffffff;
+}
+body.darkMode .navContainer {
+  background-color: rgba(10, 10, 10, 0.8);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+body.darkMode .navContainer a {
+  color: #ffffff;
+}
+body.darkMode .navContainer .nav ul li a {
+  color: #ffffff;
+}
+body.darkMode .themeToggle {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+body.darkMode .themeToggle:hover {
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+body.darkMode .intro {
+  background: #1a1a1a;
+
+}
+body.darkMode .intro h1 {
+  color: #ffffff;
+}
+
+body.darkMode .intro p {
+  color: #b0b0b0;
+}
+
+/* About Section Dark Mode */
+body.darkMode .about {
+  background-color: #2d2d2d;
+}
+
+body.darkMode .focusItem,
+body.darkMode .inspirationItem {
+  background-color: #3a3a3a;
+  color: #ffffff;
+}
+
+body.darkMode .focusItem:hover,
+body.darkMode .inspirationItem:hover {
+  border: 1px solid #ffa500;
+  box-shadow: 5px 15px 25px rgba(255, 165, 0, 0.3);
+}
+
+/* Skills Section Dark Mode */
+body.darkMode .technicalSkills {
+  background-color: #1a1a1a;
+  
+}
+body.darkMode .technicalSkills .skillsHead p{
+  color: #ffffff;
+}
+
+body.darkMode .technicalSkills h2,.header p{
+  color: #ffffff;
+} 
+
+body.darkMode .skill {
+  background: #2d2d2d;
+  color: #ffffff;
+}
+
+body.darkMode .element {
+  background: #3a3a3a;
+  color: #ffffff;
+}
+
+body.darkMode .element:hover {
+  background: #ffa500;
+  color: #000;
+}
+
+/* Projects Section Dark Mode */
+body.darkMode .featuredProjects {
+  background-color: #2d2d2d;
+}
+body.darkMode .featuredProjects h2{
+  color: #ffffff;
+}
+body.darkMode .featuredProjects p{
+  color: #ffffff;
+}
+
+
+body.darkMode .project {
+  background: #3a3a3a;
+  color: #ffffff;
+}
+
+body.darkMode .siteDetails {
+  border-top: 1px solid #555;
+}
+body.darkMode .siteDetails .perks p {
+  color: #000000;
+}
+
+body.darkMode .stack {
+  background-color: #555;
+  color: #ffffff;
+}
+
+/* Education Section Dark Mode */
+body.darkMode .Education {
+  background: linear-gradient(
+    120deg,
+    rgba(100, 50, 0, 0.3),
+    rgba(150, 100, 0, 0.3)
+  );
+}
+
+body.darkMode .EducationCard {
+  background-color: rgb(252, 243, 230);
+}
+body.darkMode .Education .header h2{
+  color: #ffffff;
+}
+body.darkMode .EducationCard .sectionA {
+  background-color: #2d2d2d;
+  color: #ffffff;
+  border: 1px solid #555;
+}
+body.darkMode .EducationCard .sectionB{
+  background-color: rgb(252, 243, 230);
+}
+body.darkMode .EducationCard .sectionB h2, h4{
+  color: #ff0000;
+}
+body.darkMode .sectionB {
+  background-color: #3a3a3a;
+  color: #ffffff;
+}
+
+body.darkMode .Connect {
+  background: #1a1a1a;
+}
+body.darkMode .Connect .header h2 {
+  color: #ffffff;
+}
+body.darkMode .Connect p{
+  color: #ffffff;
+}
+
+body.darkMode .contactBtns {
+  background: #3a3a3a;
+  color: #ffffff;
+  border: 1px solid #555;
+}
+
+body.darkMode .contactBtns a {
+  color: #ffffff;
+}
+
+body.darkMode .resume {
+  background: #2d2d2d;
+  color: #ffffff;
+}
+
+body.darkMode .partA {
+  background: #2d2d2d;
+  color: #ffffff;
+  border: 1px solid #555;
+}
+
+body.darkMode .item {
+  background: #3a3a3a;
+  color: #ffffff;
+  border: 1px solid #555;
+}
+
+/* Footer Dark Mode */
+body.darkMode .footer {
+  background: linear-gradient(160deg, rgba(50, 50, 50, 0.8), rgba(30, 30, 30, 0.9));
+  color: #ffffff;
+}
+body.darkMode .intro .viewProjects {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+body.darkMode .intro .downloadResume {
+  background-color: #3a3a3a;
+  border: 1px solid #555;
+  color: #ffffff;
+}
+
+body.darkMode .intro .downloadResume a {
+  color: #ffffff;
+}
+
+body.darkMode .intro .sayHello {
+  background: linear-gradient(120deg, #ff7b00, #ff5500);
+  color: #ffffff;
+}
+
+body.darkMode .intro .sayHello a {
+  color: #ffffff;
+}
+
+/* Coffee quote dark mode */
+body.darkMode .coffee {
+  background-color: #2d2d2d;
+  border: 1px solid #ffa500;
+}
+
+body.darkMode .coffee p {
+  color: #ffa500;
+}
+
+/* Side note dark mode */
+body.darkMode .sideNote {
+  background-color: #3a2a2a;
+  color: #ffa500;
+}
+body.darkMode .toInclude p {
+  background: #3a2a2a;
+  color: #ffa500;
 }

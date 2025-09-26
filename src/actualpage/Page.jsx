@@ -4,15 +4,46 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faSun, faArrowRight, faDownload, faEnvelope, faCode,faPuzzlePiece,faPalette, faGamepad, faPlane, faAustralSign, faMoon, faArrowUpFromBracket, faArrowUpRightFromSquare, faGraduationCap, faCalendar, faStarOfLife, faWandMagicSparkles, faStarOfDavid, faStar, faUserGraduate, faLocation, faLocationArrow, faMapLocation, faLocationPinLock, faLocationPin, faCoffee, faInfinity, faHeart } from '@fortawesome/free-solid-svg-icons';
 import profileImg from './../assets/blurry.jpg';
+import { useState, useEffect } from 'react';
 
 function Page(){
+
+     const [isDarkMode, setIsDarkMode] = useState(false);
+
+    // Initialize theme from localStorage or system preference
+    useEffect(() => {
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+            setIsDarkMode(true);
+            document.body.classList.add(Style.darkMode);
+        } else {
+            setIsDarkMode(false);
+            document.body.classList.remove(Style.darkMode);
+        }
+    }, []);
+
+    const toggleTheme = () => {
+        const newDarkMode = !isDarkMode;
+        setIsDarkMode(newDarkMode);
+        
+        if (newDarkMode) {
+            document.body.classList.add(Style.darkMode);
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.body.classList.remove(Style.darkMode);
+            localStorage.setItem('theme', 'light');
+        }
+    };
     
     return(
+        
         <>
         <div className={Style.PageBody}>
 
             <div className={Style.navContainer}>
-                <h2>JP</h2>
+                <h2> <a href="#home">JP</a></h2>
 
                 <div className={Style.nav}>
                     <ul>
@@ -25,18 +56,15 @@ function Page(){
                 </div>
 
                 <div className={Style.theme}>
-                    <button>
-                        <div className={Style.sun}>
-                            <FontAwesomeIcon icon={faSun} />
+                    <button 
+                        onClick={toggleTheme}
+                        className={Style.themeToggle}
+                        aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
+                    >
+                        <div className={Style.themeIcon}>
+                            <FontAwesomeIcon icon={isDarkMode ? faSun : faMoon} />
                         </div>
-                    </button>
-
-                    <button onClick={() => document.querySelector('body').classList.toggle(Style.darkMode)
                         
-                    }>
-                        <div className={Style.moon}>
-                            <FontAwesomeIcon icon={faMoon} />
-                        </div>
                     </button>
                 </div>
 
@@ -45,7 +73,7 @@ function Page(){
 
             <div className={Style.mainContent}>
                 
-                <div className={Style.intro}>  
+                <div className={Style.intro} id="home">  
                     <div className={Style.imageContainer}>
                         <img src={profileImg} alt="Profile" />
                     </div> 
