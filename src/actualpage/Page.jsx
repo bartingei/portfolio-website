@@ -690,7 +690,7 @@ function Page(){
                     </p>
                 </div>
                 <div className={Style.f3}>
-                    <p><span>📝 Coming Soon:</span> "Why Web3 Needs Better UI Standards" - My thoughts on decentralized UX</p>
+                    <p><span>📝 Coming Soon 😊:</span> "Why Web3 Needs Better UI Standards" - My thoughts on decentralized UX</p>
                 </div>
             </div>
 
