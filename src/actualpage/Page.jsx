@@ -51,11 +51,11 @@ function Page(){
 
             <div className={Style.navContainer}>
                 
-                <div className="name">
+                <div className={Style.Name}>
                     <h2> <a href="#home">JP</a></h2>
                 </div>
 
-                <div>
+                <div className={Style.menuAndNav}>
                 <button 
                     className={Style.hamburger} 
                     onClick={toggleMenu}
