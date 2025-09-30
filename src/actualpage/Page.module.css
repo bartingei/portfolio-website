@@ -10,7 +10,154 @@ body {
   color: #000;
 }
 
-/* ===== EXISTING STYLES ===== */
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #000;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1001;
+}
+
+body.darkMode .hamburger {
+    color: #fff;
+}
+@media (min-width:1024px){
+  .closeNav{
+  display: none;
+}
+}
+
+
+@media (max-width: 768px) {
+  .navContainer {
+    display: flex;
+    flex-direction: row;          /* keep items in a row */
+    justify-content: space-between; /* spread out left, middle, right */
+    align-items: center;
+    padding: 15px 20px;
+  }
+
+  .navContainer h2 {
+    order: 1; /* JP logo on the left */
+    margin: 0;
+    font-size: 20px;
+  }
+
+
+  .hamburger {
+    display: block;  /* show on small screens */
+    order: 2;        /* place in middle */
+    margin: 0 auto;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #000;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1001;
+    
+  }
+
+  body.darkMode .hamburger {
+    color: #fff;
+  }
+
+  .theme {
+    order: 3; /* theme button on right */
+    display: flex;
+    align-items: center;
+    margin: 0;
+    font-size: 20px;
+  }
+
+  /* Slide-in nav menu */
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    padding-top: 80px;
+  }
+
+  body.darkMode .nav {
+    background: rgba(10, 10, 10, 0.95);
+  }
+
+  .navOpen {
+    right: 0;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 20px;
+  }
+
+  .nav ul li {
+    margin: 10px 0;
+  }
+
+  .nav ul li a {
+    display: block;
+    padding: 15px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+
+  .nav ul li a:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+  }
+
+  /* Close button inside slide menu */
+  .closeNav {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 14px;
+    font-weight: bolder;
+    color: #000;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1001;
+    background-color: rgb(255, 38, 0);
+    border-radius: 8px;
+  }
+
+  .closeNav:hover {
+    background-color: rgb(179, 38, 38);
+    color: white;
+  }
+
+  body.darkMode .closeNav {
+    color: #fff;
+    background-color: rgb(179, 38, 38);
+  }
+}
+
+
+@media (max-width: 480px) {
+    .nav {
+        width: 85%;
+    }
+    
+    .nav ul li a {
+        font-size: 1rem;
+        padding: 12px;
+    }
+}
+
 .navContainer {
   display: flex;
   justify-content: space-between;
@@ -18,7 +165,6 @@ body {
   padding: 20px 40px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(15px);
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;

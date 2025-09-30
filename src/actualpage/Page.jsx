@@ -4,11 +4,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faSun, faArrowRight, faDownload, faEnvelope, faCode,faPuzzlePiece,faPalette, faGamepad, faPlane, faAustralSign, faMoon, faArrowUpFromBracket, faArrowUpRightFromSquare, faGraduationCap, faCalendar, faStarOfLife, faWandMagicSparkles, faStarOfDavid, faStar, faUserGraduate, faLocation, faLocationArrow, faMapLocation, faLocationPinLock, faLocationPin, faCoffee, faInfinity, faHeart } from '@fortawesome/free-solid-svg-icons';
 import profileImg from './../assets/blurry.jpg';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { useState, useEffect } from 'react';
 
 function Page(){
 
      const [isDarkMode, setIsDarkMode] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     // Initialize theme from localStorage or system preference
     useEffect(() => {
@@ -36,6 +38,11 @@ function Page(){
             localStorage.setItem('theme', 'light');
         }
     };
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
     
     return(
         
@@ -43,17 +50,32 @@ function Page(){
         <div className={Style.PageBody}>
 
             <div className={Style.navContainer}>
-                <h2> <a href="#home">JP</a></h2>
+                
+                <div className="name">
+                    <h2> <a href="#home">JP</a></h2>
+                </div>
 
-                <div className={Style.nav}>
+                <div>
+                <button 
+                    className={Style.hamburger} 
+                    onClick={toggleMenu}
+                    aria-label="Toggle menu">
+                
+                    <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} />
+                </button>
+                </div>
+
+                <div className={`${Style.nav} ${isMenuOpen ? Style.navOpen : ''}`}>
+                     <button onClick={() => setIsMenuOpen(false)} className={Style.closeNav}>X</button>
                     <ul>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#skills">Skills</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#education">Education</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#about" onClick={() => setIsMenuOpen(false)}>About</a></li>
+                        <li><a href="#skills" onClick={() => setIsMenuOpen(false)}>Skills</a></li>
+                        <li><a href="#projects" onClick={() => setIsMenuOpen(false)}>Projects</a></li>
+                        <li><a href="#education" onClick={() => setIsMenuOpen(false)}>Education</a></li>
+                        <li><a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact</a></li>
                     </ul>
                 </div>
+                
 
                 <div className={Style.theme}>
                     <button 
@@ -64,11 +86,9 @@ function Page(){
                         <div className={Style.themeIcon}>
                             <FontAwesomeIcon icon={isDarkMode ? faSun : faMoon} />
                         </div>
-                        
                     </button>
-                </div>
-
-
+            </div>
+            </div>
             </div>
 
             <div className={Style.mainContent}>
@@ -327,13 +347,13 @@ function Page(){
                                 <div className={Style.buttons}>
                                     <a href="https://kladi2-0.vercel.app/" target='_blank' rel='noreferrer'>
                                         <button className={Style.liveDemo}>
-                                            <FontAwesomeIcon icon={faArrowUpRightFromSquare} class={Style.btnIcon}></FontAwesomeIcon>
+                                            <FontAwesomeIcon icon={faArrowUpRightFromSquare} className={Style.btnIcon}></FontAwesomeIcon>
                                              Live Demo
                                         </button>
                                     </a>
 
                                     <button className={Style.code}>
-                                        <FontAwesomeIcon icon={faCode} class={Style.btnIcon} ></FontAwesomeIcon>
+                                        <FontAwesomeIcon icon={faCode} className={Style.btnIcon} ></FontAwesomeIcon>
                                         code
                                     </button>
                                 </div>
@@ -375,7 +395,7 @@ function Page(){
                                     
                                         <a href='https://safariflavors.vercel.app/' target='_blank' rel='noreferrer'>
                                         <button className={Style.liveDemo} >
-                                                <FontAwesomeIcon icon={faArrowUpRightFromSquare} class={Style.btnIcon}></FontAwesomeIcon>
+                                                <FontAwesomeIcon icon={faArrowUpRightFromSquare} className={Style.btnIcon}></FontAwesomeIcon>
                                                 Live Demo       
                                         </button>
                                             
@@ -383,7 +403,7 @@ function Page(){
                                          
 
                                     <button className={Style.code}>
-                                        <FontAwesomeIcon icon={faCode} class={Style.btnIcon} ></FontAwesomeIcon>
+                                        <FontAwesomeIcon icon={faCode} className={Style.btnIcon} ></FontAwesomeIcon>
                                         code
                                     </button>
                                 </div>
@@ -420,14 +440,14 @@ function Page(){
                                 <div className={Style.buttons}>
                                     <a href="https://harakafast.vercel.app/#">
                                         <button className={Style.liveDemo}>
-                                            <FontAwesomeIcon icon={faArrowUpRightFromSquare} class={Style.btnIcon}></FontAwesomeIcon>
+                                            <FontAwesomeIcon icon={faArrowUpRightFromSquare} className={Style.btnIcon}></FontAwesomeIcon>
                                              Live Demo
                                         </button>
                                     </a>
                                     
 
                                     <button className={Style.code}>
-                                        <FontAwesomeIcon icon={faCode} class={Style.btnIcon} ></FontAwesomeIcon>
+                                        <FontAwesomeIcon icon={faCode} className={Style.btnIcon} ></FontAwesomeIcon>
                                         code
                                     </button>
                                 </div>
@@ -464,13 +484,13 @@ function Page(){
                                 <div className={Style.buttons}>
                                     <a href="https://chasepal.vercel.app/">
                                         <button className={Style.liveDemo}>
-                                            <FontAwesomeIcon icon={faArrowUpRightFromSquare} class={Style.btnIcon}></FontAwesomeIcon>
+                                            <FontAwesomeIcon icon={faArrowUpRightFromSquare} className={Style.btnIcon}></FontAwesomeIcon>
                                              Live Demo
                                         </button>
                                     </a>
 
                                     <button className={Style.code}>
-                                        <FontAwesomeIcon icon={faCode} class={Style.btnIcon} ></FontAwesomeIcon>
+                                        <FontAwesomeIcon icon={faCode} className={Style.btnIcon} ></FontAwesomeIcon>
                                         code
                                     </button>
                                 </div>
@@ -693,9 +713,7 @@ function Page(){
                     <p><span>📝 Coming Soon 😊:</span> "Why Web3 Needs Better UI Standards" - My thoughts on decentralized UX</p>
                 </div>
             </div>
-
-
-        </div>        
+      
         </>
     );
 }
