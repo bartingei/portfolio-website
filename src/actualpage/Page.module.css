@@ -690,16 +690,16 @@ span {
 }
 
 .projectHeader{
-  background-image: url("kladi_look.png");
+  background-image: url("/kladi_look.png");
 }
 .projectHeader2{
-  background-image: url("safari.png");
+  background-image: url("/safari.png");
 }
 .projectHeader3{
-  background-image: url("harakaFast.png");
+  background-image: url("/harakaFast.png");
 }
 .projectHeader4{
-  background-image: url("chasepal.png");
+  background-image: url("/chasepal.png");
 }
 .projectHeader,
 .projectHeader2,
